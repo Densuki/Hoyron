@@ -4,7 +4,6 @@
   "description": "Bot usual e alternativo de Zayron e focado em Minecraft",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
