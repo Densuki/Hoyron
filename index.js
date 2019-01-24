@@ -1,5 +1,5 @@
 ﻿//==============================================================
-//INFORMAÇÕES | IMPORT's
+//INFORMAÇÕES | IMPORT's 
 //==============================================================
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
