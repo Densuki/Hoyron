@@ -13,7 +13,6 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.commands = new Discord.Collection();
-let xp = require("./xp.json");
 let purple = botconfig.purple;
 let cooldown = new Set();
 let cdseconds = 30;
@@ -105,38 +104,6 @@ bot.on("message", async message => {
   }
   //let prefix = prefixes[message.guild.id].prefixes;
   //console.log(prefix);
-//==============================================================
-//LEVEL UP
-//==============================================================
-
-//   let xpAdd = Math.floor(Math.random() * 1) + 2;
-//   console.log(xpAdd);
-//
-//   if(!xp[message.author.id]){
-//     xp[message.author.id] = {
-//       xp: 0,
-//       level: 1
-//     };
-//   }
-//
-//    let curxp = xp[message.author.id].xp;
-//    let curlvl = xp[message.author.id].level;
-//    let nxtLvl = xp[message.author.id].level * 600;
-//    xp[message.author.id].xp = curxp + xpAdd;
-//    if(nxtLvl <= xp[message.author.id].xp){
-//      xp[message.author.id].level = curlvl + 1;
-//      let lvlup = new Discord.RichEmbed()
-//      .setTitle("🎉⬆️Rank Up!⬆️🌟")
-//      .setColor(purple)
-//      .addField("🎇Próximo Nível🎇", curlvl + 1)
-//      .addField("⬆️⬆️", "🌟Use o comando `rank` para verificar seus STATUS!🌟");
-//
-//      message.channel.send(lvlup).then(msg => {msg.delete(100000)});
-//    }
-//    fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-//      if(err) console.log(err)
-// });
-
 //==============================================================
 //COOLDOWNS
 //==============================================================
