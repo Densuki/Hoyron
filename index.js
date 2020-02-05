@@ -68,10 +68,10 @@ client.on("ready", () => {
 //RICK PRESENCE
 //==============================================================
     client.user.setPresence({
-        status: "dnd", //Online = Online | idle = Ausente | dnd = Ocupado.
+        status: "idle", //Online = Online | idle = Ausente | dnd = Ocupado.
         game: {
-            name: "MANUTENÇÃO. Programado para Digimon Masters Online!",
-            type: "WATCHING" //PLAYING = Jogando | LISTING = Ouvindo | WATCHING = Assistindo | STREAMING = Live.
+            name: "um jogo, pois cansei de ouvir a aquaryon falar",
+            type: "PLAYING" //PLAYING = Jogando | LISTING = Ouvindo | WATCHING = Assistindo | STREAMING = Live.
         }
     })
 });
