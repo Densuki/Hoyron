@@ -15,7 +15,7 @@
     "common-tags": "^1.8.0",
     "date-and-time": "^0.11.1",
     "dateformat": "^3.0.3",
-    "discord.js": "^11.3.2",
+    "discord.js": "^11.5.1",
     "discord.js-reaction-menu": "^1.0.1",
     "dotenv": "^8.2.0",
     "irc-colors": "^1.5.0",

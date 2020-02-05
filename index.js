@@ -4,6 +4,7 @@ const Discord = require("discord.js");
 const { config } = require("dotenv");
 const fs = require("fs");
 const colors = require('colors');
+const token = process.env.token;
 
 const client = new Client({
     disableEveryone: true
