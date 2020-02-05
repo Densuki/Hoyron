@@ -81,7 +81,7 @@ client.on("ready", () => {
 //PARA AS MENSAGENS FUNCIONAREM
 //==============================================================
 client.on("message", async message => {
-    const prefix = "%"; //aparentemente o PREFIX do bot
+    const prefix = "&"; //aparentemente o PREFIX do bot
 
     //console.log(`${message.author.username} falou: ${message.content}`); //SIMPLES LOG
 
