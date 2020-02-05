@@ -125,4 +125,4 @@ client.on("message", async message => {
 //==============================================================
 //PRO BOT FUNCIONAR
 //==============================================================
-client.login(process.env.TOKEN);
+client.login(token);
