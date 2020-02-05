@@ -1,7 +1,7 @@
 {
   "name": "hoyron",
-  "version": "1.0.0",
-  "description": "BOT usual para fins privados",
+  "version": "2.0",
+  "description": "Um bot voltado para games e informações. É de uso privado, para estudos e atualizações.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +9,17 @@
   "author": "Densuki",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.2",
-    "highlight.js": "^9.13.1",
-    "ms": "^2.1.1",
-    "superagent": "^3.8.3"
+    "ascii-table": "0.0.9",
+    "color-convert": "^2.0.1",
+    "colors": "^1.4.0",
+    "common-tags": "^1.8.0",
+    "date-and-time": "^0.11.1",
+    "dateformat": "^3.0.3",
+    "discord.js": "^11.5.1",
+    "discord.js-reaction-menu": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "irc-colors": "^1.5.0",
+    "mathjs": "^6.6.0",
+    "node-superfetch": "^0.1.10"
   }
 }

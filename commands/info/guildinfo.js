@@ -1,0 +1,70 @@
+const { RichEmbed } = require("discord.js");
+const { getMember, formatDate } = require("../../functions.js");
+const { stripIndents } = require("common-tags");
+const dateFormat = require('dateformat');
+
+const Data = new Date();
+
+module.exports = {
+    name: "guildinfo",
+    aliases: ["guild", "serverinfo"],
+    category: "info",
+    description: "informações do Servidor Discord",
+    run: (client, message, args) => {
+        const member = getMember(message, args.join(" "));
+
+        // Member variables
+        //const joined = formatDate(member.joinedAt);
+        //const guildJoined = formatDate(message.guild.joinedAt);
+
+        const roles = member.roles
+        const guildRoles = message.guild.roles
+
+            .filter(r => r.id !== message.guild.id)
+            .map(r => r).join(", ") || 'none';
+
+        // User variables
+        //const created = formatDate(member.user.createdAt);
+        //const guildCreated = formatDate(message.guild.createdAt);
+        const CriadoD = dateFormat(message.guild.createdAt, "dd/mm/yyyy");
+        const CriadoH = dateFormat(message.guild.createdAt, "HH:MM:ss");
+
+        const embed = new RichEmbed()
+            .setColor("#ab0dcf")
+            .setAuthor(message.guild.name, 'https://imgur.com/FuNGHNp.png') 
+            .setThumbnail(message.guild.iconURL)
+
+            // .addField('Informação como Membro:', stripIndents
+            // `**> Nome em Exibição:** ${member.displayName}
+            // **> Entrou no servidor em:** ${joined}
+            // **> Possui os Cargos:** ${roles}`, true)
+
+            .addField('💻 Informações do servidor:',
+            `
+            **> 👑 Dono do servidor:** ${message.guild.owner}
+            **> 📅 Criado em:** ${CriadoD} às ${CriadoH}
+            **> 🌎 Região:** ${message.guild.region}
+            **> 💻 Total de membros no servidor: (${message.guild.memberCount})** 
+
+
+            **> Test:**
+
+            `, true
+            )
+
+            // .addField('💻 Informações adicionais:',
+            // `**> 🛡️ Todos os cargos:** ${guildRoles}`
+            //**> 👥 Usuários:** ${client.users.length}
+            //**> ⚙️ canais:** ${client.channels.length}
+            //  **> ${'<:online:660630393594183710>'} Online
+            //  **> ${'<:ausente:660630393632063518>'} Ausente
+            //  **> ${'<:offline:660630393715818526>'} Offline
+            //  **> 🤖 Bots
+            // , true)
+
+            .setTimestamp() //Horário que o comando foi usado
+            .setFooter('WariansForce! and Dollars © 2019 ≫', 'https://imgur.com/pgQnTtD.png') //notas de rodapé
+
+        message.channel.send(embed);
+    }
+}

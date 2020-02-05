@@ -1,153 +1,128 @@
-﻿//==============================================================
-//INFORMAÇÕES | IMPORT's 
-//==============================================================
-const botconfig = require("./botconfig.json");
-const Discord = require("discord.js");
-//const highlight = require("node_modules/highlight.js/styles/github.css");
-//const websocket = require(WebSocketPacketManager.js);
-//const tokenfile = require("./token.json");
-const token = process.env.token;
+//imports
+const { Client, Collection} = require("discord.js");
+const { config } = require("dotenv");
 const fs = require("fs");
-//test
+const colors = require('colors');
 
-const bot = new Discord.Client({disableEveryone: true});
+const client = new Client({
+    disableEveryone: true
+})
 
-bot.commands = new Discord.Collection();
-let purple = botconfig.purple;
-let cooldown = new Set();
-let cdseconds = 30;
-//==============================================================
-//INFORMAÇÕES | EXPORT's
-//==============================================================
-fs.readdir("./commands/", (err, files) => {
+// Coleções
+const cooldowns = new Collection();
+client.commands = new Collection();
+client.aliases = new Collection();
 
-  if(err) console.log(err);
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("Não foi possível encontrar o(s) comando(s).");
-    return;
+
+{//Função de recarregar os comandos
+// function loadCmds () {
+// client.categories = fs.readdirSync("./commands/");
+
+// delete require.cache[require.resolve(`./commands/${f}`)]
+// }
+// function emoji (id) {
+//     return client.emojis.get(id).toString();
+//}
+}
+
+//Constantes
+const DonoID = '336311215099740160';
+
+//Cores
+colors.setTheme({
+    silly: 'rainbow',
+    input: 'grey',
+    verbose: 'cyan',
+    prompt: 'grey',
+    info: 'green',
+    data: 'grey',
+    help: 'cyan',
+    warn: 'yellow',
+    debug: 'blue',
+    error: 'red'
+});
+
+{
+    //Para privar os comandos a sua ID
+ "ownerID"; "336311215099740160"
   }
 
-  jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
-    console.log(`${f} Carregado!`);
-    bot.commands.set(props.help.name, props);
-  });
+  //if(message.author.id !== config.ownerID) return;
+  //if(message.author.id !== config.DonoID) return;
+
+config({
+    path: __dirname + "/.env"
 });
+
+// Para rodar o command loader
+["command"].forEach(handler => {
+    require(`./handlers/${handler}`)(client);
+});
+
+client.on("ready", () => {
+    console.log(`Estou online!, meu nome é ${client.user.username}`.warn);
+    console.log(`Tag = ${client.user.tag}`.info);
+    console.log(`ID = ${client.user.id}`.info);
+
 //==============================================================
 //RICK PRESENCE
 //==============================================================
-
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} Estar Online em ${bot.guilds.size} server(s)!`);
-
-  bot.user.setActivity("A Aquaryon falar", {type: "LISTENING"}); //Nada🤔Mas meu prefix é % 😅
-
-  //bot.user.setGame("on SourceCade!");
-
-});
-//==============================================================
-//WELCOME
-//==============================================================
-bot.on("guildMemberAdd", async member => {
-  console.log(`${member.id} Entrou no servidor.`);
-
-  let welcomechannel = member.guild.channels.find(`name`, "chat-principal");
-  welcomechannel.send(`Seja Bem-Vindo ${member}. Não esqueça de ler as regras!`);
-});
-//==============================================================
-//LEAVE
-//==============================================================
-bot.on("guildMemberRemove", async member => {
-  console.log(`${member.id} Saiu do servidor.`);
-
-  let welcomechannel = member.guild.channels.find(`name`, "chat-principal");
-  welcomechannel.send(`É uma pena que mais um de nossa tropa acabara de nos deixar. Nos vemos na próxima ${member}`);
-});
-//==============================================================
-//Criação de Canais | Sala
-//==============================================================
-
-bot.on("ChannelCreate", async channel => {
-
-  console.log(`${channel.name} Foi criado!`);
-
-  let sChannel = channel.guild.channels.find(`name`, "general");
-  sChannel.send(`${channel} Foi criado`);
-});
-//==============================================================
-//Apagamento de Canais | Sala
-//==============================================================
-
-bot.on("ChannelDelete", async channel => {
-
-  console.log(`${channel.name} Foi deletado!`);
-
-  let sChannel = channel.guild.channels.find(`name`, "general");
-  sChannel.send(`${channel.name} Foi deletado`);
+    client.user.setPresence({
+        status: "dnd", //Online = Online | idle = Ausente | dnd = Ocupado.
+        game: {
+            name: "MANUTENÇÃO. Programado para Digimon Masters Online!",
+            type: "WATCHING" //PLAYING = Jogando | LISTING = Ouvindo | WATCHING = Assistindo | STREAMING = Live.
+        }
+    })
 });
 //==============================================================
 //PARA AS MENSAGENS FUNCIONAREM
 //==============================================================
-bot.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type == "dm") return;
-//==============================================================
-//PREFIX
-//==============================================================
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
+client.on("message", async message => {
+    const prefix = "%"; //aparentemente o PREFIX do bot
 
-    };
-  }
-  //let prefix = prefixes[message.guild.id].prefixes;
-  //console.log(prefix);
+    //console.log(`${message.author.username} falou: ${message.content}`); //SIMPLES LOG
+
+    if (message.author.bot) return;
+    if (!message.guild) return;
+    if (!message.content.startsWith(prefix)) return;
+
+    // If message.member is uncached, cache it.
+    if (!message.member) message.member = await message.guild.fetchMember(message);
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const cmd = args.shift().toLowerCase();
+    
+    if (cmd.length === 0) return;
+    
+    // Get the command
+    let command = client.commands.get(cmd);
+    // If none is found, try to find it by alias
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
+
+    // If a command is finally found, run the command
+    if (command) 
+        command.run(client, message, args);
 //==============================================================
-//COOLDOWNS
+//COMANDOS TESTES
 //==============================================================
 
-  let prefix = prefixes[message.guild.id].prefixes;
-  if(!message.content.startsWith(prefix)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("Você tem que esperar 365 dias 60 minutos 60 segundos e 300 miléssimos para usar o comando novamente. Ou apenas 60 segundos u.u")
-  }
-  if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
-  }
-
 //==============================================================
-//
+//BLACKLIST DE PALAVRAS
 //==============================================================
- let messageArray = message.content.split(" ");
- let cmd = messageArray[0];
- let args = messageArray.slice(1);
 
- let commandfile = bot.commands.get(cmd.slice(prefix.length));
- //let commandfile = bot.commands.get(cmd.slice);
- if(commandfile) commandfile.run(bot,message,args);
 
- setTimeout(() => {
-   cooldown.delete(message.author.id)
- }, cdseconds * 1000)
+{//COMANDO DE RELOAD
+//==============================================================
+// if (msg === 'reload') {
+//     message.channel.send({embed: {description: "Todos os comandos foram carregados"}})
+//     message.channel.send('Todos os comandos foram carregados')
+//     loadCmds()
+// }
+}
 
 });
 //==============================================================
-//MUSIC
-//==============================================================
-
-//==============================================================
-//WELCOME | LEAVE
-//==============================================================
-
-//==============================================================
 //PRO BOT FUNCIONAR
 //==============================================================
-//bot.login(botconfig.token);
-//bot.login(tokenfile.token);
-bot.login(token);
-//==============================================================
-//
-//==============================================================
+client.login(process.env.TOKEN);
