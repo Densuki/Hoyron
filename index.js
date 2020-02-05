@@ -1,5 +1,5 @@
 //imports
-const { Client, Collection} = require("discord.js");
+const { Client, Collection, Discord } = require("discord.js");
 const { config } = require("dotenv");
 const fs = require("fs");
 const colors = require('colors');
