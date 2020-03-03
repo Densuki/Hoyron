@@ -60,6 +60,9 @@ config({
 ["command"].forEach(handler => {
     require(`./handlers/${handler}`)(client);
 });
+//STATUS
+let presence = ["um jogo, pois cansei de ouvir a aquaryon falar", "as almas pro Lunik", "as magoas na cachaça", "as crianças no porão"];
+
 
 client.on("ready", () => {
     console.log(`Estou online!, meu nome é ${client.user.username}`.warn);
@@ -69,14 +72,27 @@ client.on("ready", () => {
 //==============================================================
 //RICK PRESENCE
 //==============================================================
+{//EXEMPLO #2
+// client.user.setPresence({
+//         status: "dnd", //Online = Online | idle = Ausente | dnd = Ocupado.
+//         game: {
+//             name: "Eu ser programada",
+//             type: "WATCHING" //PLAYING = Jogando | LISTING = Ouvindo | WATCHING = Assistindo | STREAMING = Live.
+//         }
+//     })
+// });
+}
+
+setInterval(function() {
+    let status = presence[Math.floor(Math.random()*presence.length)]
     client.user.setPresence({
-        status: "idle", //Online = Online | idle = Ausente | dnd = Ocupado.
+        status: "idle",
         game: {
-            name: "um jogo, pois cansei de ouvir a aquaryon falar",
-            type: "PLAYING" //PLAYING = Jogando | LISTING = Ouvindo | WATCHING = Assistindo | STREAMING = Live.
+            name: status,
+            type: "PLAYING"
         }
     })
-});
+}, 30000)})
 //==============================================================
 //PARA AS MENSAGENS FUNCIONAREM
 //==============================================================
