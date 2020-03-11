@@ -25,6 +25,7 @@ module.exports = {
        // const created = formatDate(client.user.createdAt);
         //const created = Data;        
 }
+        var logo = "https://imgur.com/pgQnTtD.png";
         const Data = new Date();
         const warians = new Attachment('./assets/warians.png', 'warians.png')
         const CriadoD = dateFormat(client.user.createdAt, "dd/mm/yyyy");
@@ -49,7 +50,7 @@ module.exports = {
             //**> 📅 Criado em:** no dia ${dateFormat(Data, "dd/mm/yyyy")} às ${dateFormat(Data, "HH:MM:ss")}
 
             .setTimestamp() //Horário que o comando foi usado
-            .setFooter('WariansForce! and Dollars © 2019 ≫', 'https://imgur.com/pgQnTtD.png') //notas de rodapé
+            .setFooter('WariansForce! and Dollars • © Todos os direitos reservados.', logo) //notas de rodapé
 
         message.channel.send(embed);
     }

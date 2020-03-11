@@ -33,7 +33,7 @@ module.exports = {
                         .setImage(user.avatarURL)
                         .setColor(color)
                         .setTimestamp()
-                        .setFooter('WariansForce! and Dollars © 2019', logo)
+                        .setFooter('WariansForce! and Dollars • © Todos os direitos reservados.', logo)
          message.channel.send({embed});
     },
 };

@@ -28,7 +28,7 @@ module.exports = {
             .addField('Valores', `\`\`\`js\n${args.join('')}\`\`\``)
             .addField('Resultado', `\`\`\`js\n${resp}\`\`\``)
             .setTimestamp()
-            .setFooter('WariansForce! and Dollars © 2019', logo)
+            .setFooter('WariansForce! and Dollars • © Todos os direitos reservados.', logo)
         message.channel.send(embed);            
     }
 }

@@ -26,6 +26,7 @@ module.exports = {
 
         // User variables
         //const created = formatDate(member.user.createdAt);
+        var logo = "https://imgur.com/pgQnTtD.png";
         const createdD = dateFormat(member.user.createdAt, "dd/mm/yyyy");
         const createdH = dateFormat(member.user.createdAt, "HH:MM:ss");
 
@@ -48,7 +49,7 @@ module.exports = {
             **> Foi criado no dia:** ${createdD} às ${createdH}`, true)
             
             .setTimestamp() //Horário que o comando foi usado
-            .setFooter('WariansForce! and Dollars © 2019 ≫', 'https://imgur.com/pgQnTtD.png')
+            .setFooter('WariansForce! and Dollars • © Todos os direitos reservados.', logo)
             //.setFooter(member.displayName, member.user.displayAvatarURL) //notas de rodapé
 
         if (member.user.presence.game) 

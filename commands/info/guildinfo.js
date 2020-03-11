@@ -26,6 +26,7 @@ module.exports = {
         // User variables
         //const created = formatDate(member.user.createdAt);
         //const guildCreated = formatDate(message.guild.createdAt);
+        var logo = "https://imgur.com/pgQnTtD.png";
         const CriadoD = dateFormat(message.guild.createdAt, "dd/mm/yyyy");
         const CriadoH = dateFormat(message.guild.createdAt, "HH:MM:ss");
 
@@ -45,25 +46,21 @@ module.exports = {
             **> 📅 Criado em:** ${CriadoD} às ${CriadoH}
             **> 🌎 Região:** ${message.guild.region}
             **> 💻 Total de membros no servidor: (${message.guild.memberCount})** 
-
-
-            **> Test:**
-
             `, true
             )
 
             // .addField('💻 Informações adicionais:',
-            // `**> 🛡️ Todos os cargos:** ${guildRoles}`
-            //**> 👥 Usuários:** ${client.users.length}
-            //**> ⚙️ canais:** ${client.channels.length}
+            // `**> 🛡️ Todos os cargos:** ${guildRoles}
+            // **> 👥 Usuários:** ${client.users.length}
+            // **> ⚙️ canais:** ${client.channels.length}
             //  **> ${'<:online:660630393594183710>'} Online
             //  **> ${'<:ausente:660630393632063518>'} Ausente
             //  **> ${'<:offline:660630393715818526>'} Offline
             //  **> 🤖 Bots
-            // , true)
+            // `, true)
 
             .setTimestamp() //Horário que o comando foi usado
-            .setFooter('WariansForce! and Dollars © 2019 ≫', 'https://imgur.com/pgQnTtD.png') //notas de rodapé
+            .setFooter('WariansForce! and Dollars • © Todos os direitos reservados.', logo) //notas de rodapé
 
         message.channel.send(embed);
     }
