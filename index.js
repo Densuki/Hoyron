@@ -61,7 +61,7 @@ config({
     require(`./handlers/${handler}`)(client);
 });
 //STATUS
-let presence = ["um jogo, pois cansei de ouvir a aquaryon falar", "as almas pro Lunik", "as magoas na cachaça", "as crianças no porão", "a culpa no meu programador", "pragas nas pessoas"];
+let presence = ["um jogo, pois cansei de ouvir a aquaryon falar", "as almas pro Lunik", "as magoas na cachaça", "as crianças no porão", "a culpa no meu programador", "pragas nas pessoas", "meu prefix padrão é: &", `Estou em: ${client.guilds.size} servidores e com um total de ${client.users.size} usuários.`];
 
 
 client.on("ready", () => {
