@@ -9,6 +9,7 @@ module.exports = {
 
     run: async (client, message, args) => {  
         {
+			const token = process.env.token;
             var Loading = '<a:Loading:684156225801289782>';
             var Online = '<:online:672476651082219541>';
             var Ausente = '<:ausente:672476706011086850>';
@@ -23,7 +24,7 @@ module.exports = {
 
       message.channel.send(`> **${Loading} ${Ocupado} Estou reiniciando...**`).then(m => { 
         client.destroy().then(() => {
-            client.login(process.env.TOKEN).then(m => { setTimeout(() => {
+            client.login(token).then(m => { setTimeout(() => {
 
                 message.channel.send(`> **${Ausente} Religando...**`), 15000})}).then(m => { setTimeout(() => {
                     console.log('Reiniciado com sucesso!')
