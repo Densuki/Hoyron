@@ -9,7 +9,8 @@ module.exports = {
 
     run: async (client, message, args) => {  
         {
-			const token = process.env.token;
+			//const token = process.env.token;
+			var token = 'NDk0OTk0MTAwMzUzODkyMzcy.Xmknwg.RREQb30r9-nIjQ-t6SbWqPPimcY';
             var Loading = '<a:Loading:684156225801289782>';
             var Online = '<:online:672476651082219541>';
             var Ausente = '<:ausente:672476706011086850>';
