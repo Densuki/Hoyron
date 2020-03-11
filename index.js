@@ -61,7 +61,7 @@ config({
     require(`./handlers/${handler}`)(client);
 });
 //STATUS
-let presence = ["um jogo, pois cansei de ouvir a aquaryon falar", "as almas pro Lunik", "as magoas na cachaça", "as crianças no porão"];
+let presence = ["um jogo, pois cansei de ouvir a aquaryon falar", "as almas pro Lunik", "as magoas na cachaça", "as crianças no porão", "a culpa no meu programador", "pragas nas pessoas"];
 
 
 client.on("ready", () => {
