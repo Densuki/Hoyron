@@ -8,7 +8,7 @@ const colors = require('colors');
 //Diretório pro Token
 const token = process.env.token;
 //Pro Presence
-const { getMember, formatDate } = require("../../functions.js");
+//const { getMember, formatDate } = require("../../functions.js");
 const { } = require("../../datas.js");
 const { stripIndents } = require("common-tags");
 const dateFormat = require('dateformat');
