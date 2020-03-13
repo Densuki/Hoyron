@@ -9,7 +9,10 @@ const colors = require('colors');
 const token = process.env.token;
 //Pro Presence
 //const { getMember, formatDate } = require("../../functions.js");
-const { } = require("../../datas.js");
+//const { } = require("../../datas.js");
+
+const { getMember, formatDate } = require("functions.js");
+const { } = require("datas.js");
 const { stripIndents } = require("common-tags");
 const dateFormat = require('dateformat');
 //==================================================================
