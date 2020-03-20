@@ -1,16 +1,23 @@
-//imports
+//Pro bot funcionar direito
 const { Client, Collection } = require("discord.js");
 const Discord = require("discord.js");
+//imports
 const { config } = require("dotenv");
 const fs = require("fs");
 const colors = require('colors');
+//Diretório pro Token
 const token = process.env.token;
-
+//Pro Presence
+//const { getMember, formatDate } = require("../../functions.js");
+//const { } = require("../../datas.js");
+const { stripIndents } = require("common-tags");
+const dateFormat = require('dateformat');
+//==================================================================
 const client = new Client({
     disableEveryone: true
 })
 
-// Coleções
+//Coleções
 const cooldowns = new Collection();
 client.commands = new Collection();
 client.aliases = new Collection();
