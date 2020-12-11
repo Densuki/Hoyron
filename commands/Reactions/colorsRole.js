@@ -1,4 +1,6 @@
-const { Collection, RichEmbed, Attachment } = require("discord.js");
+const { RichEmbed, Attachment} = require("discord.js");
+const { } = require("../../datas.js");
+const dateFormat = require('dateformat');
 //const rm = require('discord.js-reaction-menu');
 
 module.exports = {
