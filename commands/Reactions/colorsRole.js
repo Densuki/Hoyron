@@ -74,7 +74,7 @@ module.exports = {
                 //.setImage()
                 .setTimestamp()
 
-                .setFooter(`${message.guild.name} • Dollars • © Todos os direitos reservados.`, logo);
+                .setFooter(`${message.guild.name} • Dollars • © Todos os direitos reservados.`, logo)
                 message.channel.send(embed);            
         }
     }
