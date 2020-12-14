@@ -56,8 +56,12 @@ module.exports = {
                     `${Console}`, true)
                 .addField(`**> Mobile**`,
                     `${Mobile}`, true)
+                .addField(`${Nulo}`, 
+                    `${Nulo}`, true)
                 .addField(`**> Torradeira**`,
                     `${Torradeira}`, true)
+                .addField(`${Nulo}`, 
+                    `${Nulo}`, true)
                     
                 .setTimestamp()
 

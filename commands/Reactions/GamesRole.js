@@ -56,28 +56,31 @@ module.exports = {
                 .setThumbnail(message.guild.iconURL)
                 .setDescription(`Afim de organizar o servidor, separamos os cargos para liberar algumas salas de acordo com jogo`)
                 .addBlankField()
-                .addField(`**> RPG**`, 
+                .addField(`**> RPG**`,
                     `${RPG}`, true)
-                .addField(`**> Minecraft**`, 
-                    `${Minecraft}`, true)
-                .addField(`**> One Piece [Grand Line Adventure]**`, 
-                    `${One_Piece}`, true)
-                .addField(`**> Elsword**`, 
-                    `${Elsword}`, true)
-                .addField(`**> Digimon Masters Online**`, 
-                    `${Digimon_Masters_Online}`, true)
-                .addField(`**> MOBA**`, 
+                .addField(`**> MOBA**`,
                     `${MOBA}`, true)
-                .addField(`**> League Of Leagends**`, 
-                    `${League_Of_Leagends}`, true)
-                .addField(`**> Champions Legion**`, 
-                    `${Champions_Legion}`, true)
-                .addField(`**> FPS**`, 
+                .addField(`**> FPS**`,
                     `${FPS}`, true)
-                .addField(`**> Paladins**`, 
+                .addField(`**> Elsword**`,
+                    `${Elsword}`, true)
+                .addField(`**> Minecraft**`,
+                    `${Minecraft}`, true)
+                .addField(`**> Paladins**`,
                     `${Paladins}`, true)
-                .addField(`**> Among Us**`, 
+                .addField(`**> One Piece**`,
+                    `${One_Piece}`, true)
+                .addField(`**> Digimon**`,
+                    `${Digimon_Masters_Online}`, true)
+                .addField(`**> Among Us**`,
                     `${Among_Us}`, true)
+
+                .addBlankField()
+
+                .addField(`**> League Of Leagends**`,
+                    `${League_Of_Leagends}`, true)
+                .addField(`**> Champions Legion**`,
+                    `${Champions_Legion}`, true)
 
                 .setTimestamp()
 
