@@ -40,7 +40,7 @@ module.exports = {
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Qual cor você quer no seu nick?")
                 .setColor(Cor)
-                .setThumbnail(message.guild.iconURL) //ícone 
+                .setThumbnail(message.guild.iconURL)
                 .setDescription(`Escolha a cor na qual deseja e que seja do seu agrado. Você poderá mudar quando quiser`)
                 .addBlankField()
                 .addField(`**> Branco**`, 
@@ -74,7 +74,6 @@ module.exports = {
                 .addField(`**> Preto**`, 
                     `${Preto}`, true)
                     
-                //.setImage()
                 .setTimestamp()
 
                 .setFooter(`${message.guild.name} • Dollars • © Todos os direitos reservados.`, logo)

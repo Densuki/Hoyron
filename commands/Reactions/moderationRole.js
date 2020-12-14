@@ -55,7 +55,7 @@ module.exports = {
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Por favor, Escolha o sexo de sua preferência")
                 .setColor(Cor)
-                .setThumbnail(message.guild.iconURL) //ícone 
+                .setThumbnail(message.guild.iconURL)
                 .setDescription(`Caso não queira ser indentificado(a), escolha <@&773229247853494313>. Após terminar, escolha o cargo <@&563547359011667969>.`)
                 .addBlankField()
                 .addField(`**> Mulher**`, 

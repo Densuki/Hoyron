@@ -53,7 +53,7 @@ module.exports = {
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Quais ou qual jogo você costuma jogar?")
                 .setColor(Cor)
-                .setThumbnail(message.guild.iconURL) //ícone 
+                .setThumbnail(message.guild.iconURL)
                 .setDescription(`Afim de organizar o servidor, separamos os cargos para liberar algumas salas de acordo com jogo`)
                 .addBlankField()
                 .addField(`**> RPG**`, 
