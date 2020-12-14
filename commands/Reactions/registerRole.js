@@ -4,8 +4,8 @@ const dateFormat = require('dateformat');
 //const rm = require('discord.js-reaction-menu');
 
 module.exports = {
-    name: "colorsrole",
-    aliases: ["cr", "croles", "amongrole"],
+    name: "registersrole",
+    aliases: ["rr", "rroles", "registerr"],
     category: "reactions",
     description: "manda uma mensagem com uma lista de cargos por reações",
 
@@ -36,43 +36,28 @@ module.exports = {
             var Preto = '<:Preto:786758996131840030>';
             }
 
+        {//REGISTRO
+            var Computador = '💻';
+            var Console = '<:Console:787839751192969242>';
+            var Mobile = '📱';    
+            var Torradeira = '🔥';
+            }
+
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
-                .setTitle("Qual cor você quer no seu nick?")
+                .setTitle("Em qual plataforma você joga?")
                 .setColor(Cor)
                 .setThumbnail(message.guild.iconURL)
-                .setDescription(`Escolha a cor na qual deseja e que seja do seu agrado. Você poderá mudar quando quiser`)
+                .setDescription(`Afim de organizar o servidor, este campo é destinado a separar os usuários de acordo com o ambiente de convivência e jogabilidade`)
                 .addBlankField()
-                .addField(`**> Branco**`, 
-                    `${Branco}`, true)
-                .addField(`**> Amarelo**`, 
-                    `${Amarelo}`, true)
-                .addField(`**> Laranja**`, 
-                    `${Laranja}`, true)
-                .addField(`**> Carmesim**`, 
-                    `${Carmesim}`, true)
-                .addField(`**> Rosa**`, 
-                    `${Rosa}`, true)
-                .addField(`**> Rosa Escuro**`, 
-                    `${Rosa_Escuro}`, true)
-                .addField(`**> Magenta**`, 
-                    `${Magenta}`, true)
-                .addField(`**> Violeta**`, 
-                    `${Violeta}`, true)
-                .addField(`**> Azul**`, 
-                    `${Azul}`, true)
-                .addField(`**> Ciano**`, 
-                    `${Ciano}`, true)
-                .addField(`**> Lima**`, 
-                    `${Lima}`, true)
-                .addField(`**> Verde Escuro**`, 
-                    `${Verde_Escuro}`, true)
-                .addField(`**> Marrom**`, 
-                    `${Marrom}`, true)
-                .addField(`**> Cinza Escuro**`, 
-                    `${Cinza_Escuro}`, true)
-                .addField(`**> Preto**`, 
-                    `${Preto}`, true)
+                .addField(`**> Computador**`,
+                    `${Computador}`, true)
+                .addField(`**> Console**`,
+                    `${Console}`, true)
+                .addField(`**> Mobile**`,
+                    `${Mobile}`, true)
+                .addField(`**> Torradeira**`,
+                    `${Torradeira}`, true)
                     
                 .setTimestamp()
 

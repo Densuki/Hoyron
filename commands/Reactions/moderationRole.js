@@ -4,8 +4,8 @@ const dateFormat = require('dateformat');
 //const rm = require('discord.js-reaction-menu');
 
 module.exports = {
-    name: "colorsrole",
-    aliases: ["cr", "croles", "amongrole"],
+    name: "moderationrole",
+    aliases: ["mr", "mroles"],
     category: "reactions",
     description: "manda uma mensagem com uma lista de cargos por reações",
 
@@ -36,44 +36,50 @@ module.exports = {
             var Preto = '<:Preto:786758996131840030>';
             }
 
+        {//REGISTRO
+           var Computador = '<:Computer:787834977348747324> ';
+           var Console = '<:Console:787834417690574878>';
+           var Mobile = '<:Mobile:787834411885658132> ';    
+           var Torradeira = '🔥';
+           
+           var Mulher = '❤️';
+           var Homem = '💙';
+           var PronomeN = '💜';
+           var Okama = '💗';
+           var Gado = '🐮';
+           var Pedro = '🐵';
+           var Membro = '♿';
+           }
+
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
-                .setTitle("Qual cor você quer no seu nick?")
+                .setTitle("Por favor, Escolha o sexo de sua preferência")
                 .setColor(Cor)
-                .setThumbnail(message.guild.iconURL)
-                .setDescription(`Escolha a cor na qual deseja e que seja do seu agrado. Você poderá mudar quando quiser`)
+                .setThumbnail(message.guild.iconURL) //ícone 
+                .setDescription(`Caso não queira ser indentificado(a), escolha <@&773229247853494313>. Após terminar, escolha o cargo <@&563547359011667969>.`)
                 .addBlankField()
-                .addField(`**> Branco**`, 
-                    `${Branco}`, true)
-                .addField(`**> Amarelo**`, 
-                    `${Amarelo}`, true)
-                .addField(`**> Laranja**`, 
-                    `${Laranja}`, true)
-                .addField(`**> Carmesim**`, 
-                    `${Carmesim}`, true)
-                .addField(`**> Rosa**`, 
-                    `${Rosa}`, true)
-                .addField(`**> Rosa Escuro**`, 
-                    `${Rosa_Escuro}`, true)
-                .addField(`**> Magenta**`, 
-                    `${Magenta}`, true)
-                .addField(`**> Violeta**`, 
-                    `${Violeta}`, true)
-                .addField(`**> Azul**`, 
-                    `${Azul}`, true)
-                .addField(`**> Ciano**`, 
-                    `${Ciano}`, true)
-                .addField(`**> Lima**`, 
-                    `${Lima}`, true)
-                .addField(`**> Verde Escuro**`, 
-                    `${Verde_Escuro}`, true)
-                .addField(`**> Marrom**`, 
-                    `${Marrom}`, true)
-                .addField(`**> Cinza Escuro**`, 
-                    `${Cinza_Escuro}`, true)
-                .addField(`**> Preto**`, 
-                    `${Preto}`, true)
-                    
+                .addField(`**> Mulher**`, 
+                    `${Mulher}`, true)
+                .addField(`**> Homem**`,
+                    `${Homem}`, true)
+                .addField(`**> Pronome Neutro**`, 
+                    `${PronomeN}`, true)
+                .addField(`**> Okama**`, 
+                    `${Okama}`, true)
+                .addField(`**> Sim, me identifico como Gado**`, 
+                    `${Gado}`, true)
+                .addField(`**> Sim, me identifico como PeDrO**`, 
+                    `${Pedro}`, true)
+
+                .addBlankField()
+                .addField(`${Nulo}`, 
+                    `${Nulo}`, true)    
+                .addField(`**> Membro**`, 
+                    `${Membro}`, true)
+                .addField(`${Nulo}`, 
+                    `${Nulo}`, true)
+
+
                 .setTimestamp()
 
                 .setFooter(`${message.guild.name} • Dollars • © Todos os direitos reservados.`, logo)

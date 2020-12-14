@@ -1,7 +1,12 @@
+const { RichEmbed, Attachment} = require("discord.js");
+const { } = require("../../datas.js");
+const dateFormat = require('dateformat');
+//const rm = require('discord.js-reaction-menu');
+
 module.exports = {
     name: "colorsrole",
     aliases: ["cr", "croles", "amongrole"],
-    category: "info",
+    category: "reactions",
     description: "manda uma mensagem com uma lista de cargos por reações",
 
     run: async (client, message, args) => {
@@ -10,6 +15,7 @@ module.exports = {
             var logo = 'https://imgur.com/a8DbA6h.png';
             var Cor = '#ab0dcf';
             var DiscordThumb = 'https://imgur.com/FuNGHNp.png';
+            var Nulo = '<:null:771585814110797825>';
             }
 
         {//CORES
@@ -30,8 +36,7 @@ module.exports = {
             var Preto = '<:Preto:786758996131840030>';
             }
 
-        new rm.menu(message.channel, message.author.id, [
-                Page1 = new RichEmbed()
+            const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Qual cor você quer no seu nick?")
                 .setColor(Cor)
@@ -72,7 +77,7 @@ module.exports = {
                 //.setImage()
                 .setTimestamp()
 
-                .setFooter(`${message.guild.name} • Dollars • © Todos os direitos reservados.`, logo)]);
-            
+                .setFooter(`${message.guild.name} • Dollars • © Todos os direitos reservados.`, logo)
+                message.channel.send(embed);            
         }
     }
