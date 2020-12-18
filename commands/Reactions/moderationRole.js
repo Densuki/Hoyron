@@ -44,10 +44,15 @@ module.exports = {
            
            var Mulher = '❤️';
            var Homem = '💙';
+
            var PronomeN = '💜';
            var Okama = '💗';
            var Gado = '🐮';
            var Pedro = '🐵';
+
+           var Cadeia = '⛓️';
+           var Chave = '🔑';
+
            var Membro = '♿';
            }
 
@@ -64,6 +69,9 @@ module.exports = {
                     `${Homem}`, true)
                 .addField(`**> Pronome Neutro**`, 
                     `${PronomeN}`, true)
+
+                .addBlankField()
+                    
                 .addField(`**> Okama**`, 
                     `${Okama}`, true)
                 .addField(`**> Sim, me identifico como Gado**`, 
@@ -72,6 +80,14 @@ module.exports = {
                     `${Pedro}`, true)
 
                 .addBlankField()
+
+                .addField(`**> Sim, Já Posso ser preso`,
+                    `${Cadeia}`)
+                .addField(`**> Cuidado! Posso dar cadeia`,
+                    `${Chave}`)
+
+                .addBlankField()
+
                 .addField(`${Nulo}`, 
                     `${Nulo}`, true)    
                 .addField(`**> Membro**`, 
