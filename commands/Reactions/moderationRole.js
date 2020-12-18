@@ -54,7 +54,7 @@ module.exports = {
            var Chave = '🔑';
 
            var Membro = '♿';
-           var Confirmação = '✔';
+           var Confirmação = '✅';
            }
 
          message.delete();
