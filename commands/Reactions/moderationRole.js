@@ -89,14 +89,12 @@ module.exports = {
                     `${Chave}`, true)
 
                 .addBlankField()
-
-                .addField(`${Nulo}`, 
-                    `${Nulo}`, true)    
+  
                 .addField(`**> Membro**`, 
                     `${Membro}`, true)
                 .addField(`${Nulo}`, 
                     `${Nulo}`, true)
-                .addField(`>** Confirmação**`,
+                .addField(`**> Confirmação**`,
                     `${Confirmação}`, true)
 
 
