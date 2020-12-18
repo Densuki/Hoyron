@@ -60,7 +60,7 @@ module.exports = {
          message.delete();
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
-                .setTitle("Por favor, Escolha o sexo de sua preferência")
+                .setTitle("Por favor, escolha o sexo de sua preferência e sua identificação")
                 .setColor(Cor)
                 .setThumbnail(message.guild.iconURL)
                 .setDescription(`Caso não queira ser indentificado(a), escolha <@&773229247853494313>. Após terminar, escolha o cargo <@&563547359011667969> e confirme no <@&788873815799234601>`)
