@@ -4,8 +4,8 @@ const dateFormat = require('dateformat');
 //const rm = require('discord.js-reaction-menu');
 
 module.exports = {
-    name: "colorsrole",
-    aliases: ["cr", "croles", "amongrole"],
+    name: "tagsrole",
+    aliases: ["tr", "troles"],
     category: "reactions",
     description: "manda uma mensagem com uma lista de cargos por reações",
 
@@ -36,6 +36,7 @@ module.exports = {
             var Preto = '<:Preto:786758996131840030>';
             }
 
+         message.delete();
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Qual cor você quer no seu nick?")

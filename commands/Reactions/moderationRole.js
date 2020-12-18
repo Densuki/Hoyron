@@ -54,14 +54,16 @@ module.exports = {
            var Chave = '🔑';
 
            var Membro = '♿';
+           var Confirmação = '✔';
            }
 
+         message.delete();
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Por favor, Escolha o sexo de sua preferência")
                 .setColor(Cor)
                 .setThumbnail(message.guild.iconURL)
-                .setDescription(`Caso não queira ser indentificado(a), escolha <@&773229247853494313>. Após terminar, escolha o cargo <@&563547359011667969>.`)
+                .setDescription(`Caso não queira ser indentificado(a), escolha <@&773229247853494313>. Após terminar, escolha o cargo <@&563547359011667969> e confirme no <@&788873815799234601>`)
                 .addBlankField()
                 .addField(`**> Mulher**`, 
                     `${Mulher}`, true)
@@ -81,10 +83,10 @@ module.exports = {
 
                 .addBlankField()
 
-                .addField(`**> Sim, Já Posso ser preso`,
-                    `${Cadeia}`)
-                .addField(`**> Cuidado! Posso dar cadeia`,
-                    `${Chave}`)
+                .addField(`**> Sim, Já Posso ser preso**`,
+                    `${Cadeia}`, true)
+                .addField(`**> Cuidado! Posso dar cadeia**`,
+                    `${Chave}`, true)
 
                 .addBlankField()
 
@@ -94,6 +96,8 @@ module.exports = {
                     `${Membro}`, true)
                 .addField(`${Nulo}`, 
                     `${Nulo}`, true)
+                .addField(`>** Confirmação**`,
+                    `${Confirmação}`, true)
 
 
                 .setTimestamp()

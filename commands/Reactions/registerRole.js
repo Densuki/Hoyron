@@ -43,6 +43,7 @@ module.exports = {
             var Torradeira = '🔥';
             }
 
+         message.delete();
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Em qual plataforma você joga?")

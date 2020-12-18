@@ -36,6 +36,7 @@ module.exports = {
             var Preto = '<:Preto:786758996131840030>';
             }
 
+         message.delete();
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Qual cor você quer no seu nick?")

@@ -49,6 +49,8 @@ module.exports = {
             var Paladins = '<:Paladins:787850772975976448>';
             var Among_Us = '<:Vermelho:786777162299736064>';
         }
+
+         message.delete();
             const embed = new RichEmbed()
                 .setAuthor("DOLLARS", DiscordThumb)
                 .setTitle("Quais ou qual jogo você costuma jogar?")
