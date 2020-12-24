@@ -13,7 +13,7 @@
     "color-convert": "^2.0.1",
     "colors": "^1.4.0",
     "common-tags": "^1.8.0",
-    "date-and-time": "^0.11.1",
+    "date-and-time": "^0.14.2",
     "dateformat": "^3.0.3",
     "discord.js": "^11.5.1",
     "discord.js-reaction-menu": "^1.0.1",
