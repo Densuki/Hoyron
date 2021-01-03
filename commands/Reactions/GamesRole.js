@@ -43,7 +43,7 @@ module.exports = {
             var Elsword = '<:Elsword:787850770568445993>';
             var Digimon_Masters_Online = '<:Digimon:787850766643494972>';
             var MOBA = '<:Garena:787847118059733032>';
-            var League_Of_Leagends = '<:League_Of_Legends:787852868966678539>';
+            var League_Of_Legends = '<:League_Of_Legends:787852868966678539>';
             var Champions_Legion = '<:MOBA:787847101567991808>';
             var FPS = '<:FPS:787851464286142484>';
             var Paladins = '<:Paladins:787850772975976448>';
@@ -79,8 +79,8 @@ module.exports = {
 
                 .addBlankField()
 
-                .addField(`**> League Of Leagends**`,
-                    `${League_Of_Leagends}`, true)
+                .addField(`**> League Of Legends**`,
+                    `${League_Of_Legends}`, true)
                 .addField(`**> Champions Legion**`,
                     `${Champions_Legion}`, true)
 
