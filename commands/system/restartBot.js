@@ -1,5 +1,5 @@
 const { Client, Collection, RichEmbed } = require("discord.js");
-const { token } = require("./index.js");
+//const { token } = require("./index.js");
 
 module.exports = {
     name: "restartbot",
@@ -10,7 +10,7 @@ module.exports = {
 
     run: async (client, message, args) => {  
         {
-			//const token = process.env.token;
+			const token = process.env.token;
             var Loading = '<a:Loading:684156225801289782>';
             var Online = '<:online:672476651082219541>';
             var Ausente = '<:ausente:672476706011086850>';
