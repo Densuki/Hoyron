@@ -83,9 +83,9 @@ module.exports = {
 
                 .addBlankField()
 
-                .addField(`**> Já Posso ser preso**`,
+                .addField(`**> Já Posso ser preso | +18**`,
                     `${Cadeia}`, true)
-                .addField(`**> Cuidado! Posso dar cadeia**`,
+                .addField(`**> Cuidado! Posso dar cadeia | -18**`,
                     `${Chave}`, true)
 
                 .addBlankField()
