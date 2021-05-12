@@ -20,7 +20,7 @@
     "dotenv": "^8.2.0",
     "erela.js": "^1.1.7",
     "irc-colors": "^1.5.0",
-    "mathjs": "^6.6.0",
+    "mathjs": "^7.5.1",
     "node-superfetch": "^0.1.10"
   }
 }
